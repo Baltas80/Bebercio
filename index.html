@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ru">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CHEKUSHKA DROP</title>
+<title>CHEKUSHKA DROP — Bebercio</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0812;--surface:#141024;--surface2:#1c1533;--border:#352c55;--text:#e6e2f5;--dim:#948ab8;--money:#b98cff;--xp:#6ee0ff;--luck:#4ade80;--gold:#ffd740;--red:#ff7043}
@@ -43,8 +43,8 @@ h1{font-size:1.3rem}.muted{color:var(--dim);font-size:.85rem;margin:7px 0 14px}
 <div class="pill luck">🍀 LUCK ×1.00</div>
 <div class="pill gold">⭐ LVL 1</div>
 <button class="nav active" data-view="game">DROP</button>
-<button class="nav" data-view="collection">COLLECTION</button>
-<button class="nav" data-view="market">MARKET</button>
+<button class="nav" data-view="collection">COLECCIÓN</button>
+<button class="nav" data-view="market">MERCADO</button>
 </div>
 </header>
 
@@ -52,42 +52,42 @@ h1{font-size:1.3rem}.muted{color:var(--dim);font-size:.85rem;margin:7px 0 14px}
 <div class="clicker">
 <button class="click-btn" id="clickBtn" aria-label="Earn coins">₽</button>
 <div>
-<h1>Заработок</h1>
-<p class="muted">Нажимай и зарабатывай монеты для открытия кейсов.</p>
+<h1>Ganancias</h1>
+<p class="muted">Pulsa y consigue monedas para abrir cajas.</p>
 <div class="stats">
-<div class="stat"><b id="clicks">0</b><small>CLICKS</small></div>
+<div class="stat"><b id="clicks">0</b><small>CLICS</small></div>
 <div class="stat"><b id="combo">×1</b><small>COMBO</small></div>
-<div class="stat"><b id="best">×1</b><small>BEST</small></div>
+<div class="stat"><b id="best">×1</b><small>RÉCORD</small></div>
 </div>
 </div>
 </div>
 <div class="cases">
 <div class="case selected" data-price="100" data-name="CHEKUSHKA"><div class="bottle">🍾</div><strong>CHEKUSHKA</strong><div class="price">100 ₽</div></div>
 <div class="case" data-price="500" data-name="PREMIUM"><div class="bottle">🥃</div><strong>PREMIUM</strong><div class="price">500 ₽</div></div>
-<div class="case" data-price="1500" data-name="LEGEND"><div class="bottle">🍷</div><strong>LEGEND</strong><div class="price">1,500 ₽</div></div>
+<div class="case" data-price="1500" data-name="LEYENDA"><div class="bottle">🍷</div><strong>LEYENDA</strong><div class="price">1,500 ₽</div></div>
 <div class="case" data-price="5000" data-name="ULTRA"><div class="bottle">🧪</div><strong>ULTRA</strong><div class="price">5,000 ₽</div></div>
 </div>
 <div class="stage">
 <div class="drop" id="drop">🍾</div>
-<button class="open" id="openBtn">OPEN CASE</button>
-<div class="result" id="result">Выбери кейс и открой его.</div>
+<button class="open" id="openBtn">ABRIR CAJA</button>
+<div class="result" id="result">Elige una caja y ábrela.</div>
 </div>
 </section>
 
 <section id="collection" class="view">
-<h2 style="margin-bottom:14px">COLLECTION</h2>
+<h2 style="margin-bottom:14px">COLECCIÓN</h2>
 <div class="grid" id="collectionGrid"></div>
 </section>
 
 <section id="market" class="view">
 <div class="market">
-<h2>MARKET</h2>
-<p>Игровой рынок коллекционных предметов.</p>
+<h2>MERCADO</h2>
+<p>Mercado de objetos coleccionables.</p>
 <div class="grid">
-<div class="card"><div class="item">🍾</div><strong>Chekushka</strong><div class="rarity">Common</div></div>
-<div class="card"><div class="item">🥃</div><strong>Premium Spirit</strong><div class="rarity">Rare</div></div>
-<div class="card"><div class="item">🍷</div><strong>Red Legend</strong><div class="rarity">Epic</div></div>
-<div class="card"><div class="item">🧪</div><strong>Ultra Drop</strong><div class="rarity">Mythic</div></div>
+<div class="card"><div class="item">🍾</div><strong>Chekushka</strong><div class="rarity">Común</div></div>
+<div class="card"><div class="item">🥃</div><strong>Espíritu Premium</strong><div class="rarity">Raro</div></div>
+<div class="card"><div class="item">🍷</div><strong>Leyenda Roja</strong><div class="rarity">Épico</div></div>
+<div class="card"><div class="item">🧪</div><strong>Ultra Drop</strong><div class="rarity">Mítico</div></div>
 </div>
 </div>
 </section>
@@ -95,10 +95,10 @@ h1{font-size:1.3rem}.muted{color:var(--dim);font-size:.85rem;margin:7px 0 14px}
 <script>
 const state={coins:1000,clicks:0,combo:1,best:1,selected:100,collection:{}};
 const rewards=[
-{name:'Chekushka',icon:'🍾',rarity:'Common',weight:65,value:100},
-{name:'Premium Spirit',icon:'🥃',rarity:'Rare',weight:25,value:300},
-{name:'Red Legend',icon:'🍷',rarity:'Epic',weight:8,value:900},
-{name:'Ultra Drop',icon:'🧪',rarity:'Mythic',weight:2,value:4000}
+{name:'Chekushka',icon:'🍾',rarity:'Común',weight:65,value:100},
+{name:'Espíritu Premium',icon:'🥃',rarity:'Raro',weight:25,value:300},
+{name:'Leyenda Roja',icon:'🍷',rarity:'Épico',weight:8,value:900},
+{name:'Ultra Drop',icon:'🧪',rarity:'Mítico',weight:2,value:4000}
 ];
 const $=id=>document.getElementById(id);
 function render(){ $('coins').textContent=state.coins.toLocaleString();$('clicks').textContent=state.clicks;$('combo').textContent='×'+state.combo;$('best').textContent='×'+state.best;$('openBtn').disabled=state.coins<state.selected;renderCollection()}
@@ -106,7 +106,7 @@ function renderCollection(){ $('collectionGrid').innerHTML=rewards.map(r=>'<div 
 $('clickBtn').onclick=()=>{state.clicks++;state.combo=Math.min(10,state.combo+1);state.best=Math.max(state.best,state.combo);state.coins+=state.combo;render()}
 let comboTimer;document.addEventListener('click',e=>{if(e.target.id==='clickBtn'){clearTimeout(comboTimer);comboTimer=setTimeout(()=>{state.combo=1;render()},1200)}});
 document.querySelectorAll('.case').forEach(c=>c.onclick=()=>{document.querySelectorAll('.case').forEach(x=>x.classList.remove('selected'));c.classList.add('selected');state.selected=+c.dataset.price;render()});
-$('openBtn').onclick=()=>{if(state.coins<state.selected)return;state.coins-=state.selected;let roll=Math.random()*100,sum=0,p=rewards[0];for(const r of rewards){sum+=r.weight;if(roll<=sum){p=r;break}}state.collection[p.name]=(state.collection[p.name]||0)+1;$('result').textContent='Получено: '+p.icon+' '+p.name+' — '+p.rarity;render()};
+$('openBtn').onclick=()=>{if(state.coins<state.selected)return;state.coins-=state.selected;let roll=Math.random()*100,sum=0,p=rewards[0];for(const r of rewards){sum+=r.weight;if(roll<=sum){p=r;break}}state.collection[p.name]=(state.collection[p.name]||0)+1;$('result').textContent='Has obtenido: '+p.icon+' '+p.name+' — '+p.rarity;render()};
 document.querySelectorAll('.nav').forEach(n=>n.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));n.classList.add('active');document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$(n.dataset.view).classList.add('active')});
 render();
 </script>
